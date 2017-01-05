@@ -20,7 +20,7 @@
 		<p>Bingo! We've successfully overwritten the value of 0x2410 with '41' - the hex value of 'A'. However, if we want the conditional flag (compare at address 445a) to lead to unlocking the door, we need the value at 0x2410 to equal '45'. A quick check with a hex to ascii converter reveals '45' to be 'E' in ascii. Since the 17th character of our password begins the overflow into 0x2410, we can try 'AAAAAAAAAAAAAAAAE' as our password.</p>
 		<img src="https://mycognosist.github.io/images/HanEOFlow.png"></img>
 		<br><i>Looking good: value of '45' at 0x2410</i>
-		<p>Now we just need to step through the program and...
+		<p>Now we just need to step through the program and...</p>
 		<img src="https://mycognosist.github.io/images/HanUnlocked.png"></img>
 		<br><i>Ding ding ding, we have a winner!</i>
 		<p>We did it! We successfully executed a buffer overflow to direct a conditional flag outcome towards unlocking the door. Great work! Now simple 'solve' the challenge with the successful password. As a quick note, you may find it helpful to enter characters in sequences of 4 when attempting a buffer overflow (e.g. 'AAAABBBBCCCCDDDDEEEE'). This will help you to determine where the overflow is occuring and at what point in your password string to insert desired values.</p>
