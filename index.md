@@ -1,3 +1,7 @@
+---
+title: mycognosist [github]
+---
+
 # mycognosist
 ## Tutorials
 
