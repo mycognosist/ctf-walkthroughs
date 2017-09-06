@@ -1,5 +1,5 @@
 ---
-title: Walkthrough - Micro Corrupion: New Orleans
+title: Walkthrough - Micro Corruption: New Orleans
 ---
 
 ## Micro Corruption: New Orleans
@@ -69,4 +69,4 @@ I hope this walk-through benefited you in some way. I'm brand new to reverse-eng
 
 I'll be doing write-ups for each stage of the Micro Corruption CTF and will post them as I progress. Thanks for reading!
 
-[Back to the walkthough index](https://mycognosist.github.io/)
+[Back to the walkthrough index](https://mycognosist.github.io/)
