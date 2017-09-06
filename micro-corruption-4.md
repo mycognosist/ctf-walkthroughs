@@ -36,7 +36,7 @@ _Address unaligned message. Notice the value of the program counter (pc) in the 
 
 Now that we know the program counter is being set based on a value we can control in memory, let's determine the address we'd like to redirect to. A quick look through the **login** function and we see that the **unlock_door** function is called at 0x4528. We lookup the corresponding ascii values of 45 and 28 and discover they translate to 'E' and '(' respectively. Great, now let's reformulate our password to include these values (remembering to reverse their order due to Endianess) and rerun the program. We step through the ret instruction at 0x453e after the add #0x10, sp instruction and we arrive just where we had hoped: 0x4528 (the call for **unlock_door**).
 
-[Successful redirect due to stack overflow](https://mycognosist.github.io/images/CuscoPass.png)
+![Successful redirect due to stack overflow](https://mycognosist.github.io/images/CuscoPass.png)
 _Successful redirect due to stack overflow_
 
 Continue through the call instruction...cha-ching - jackpot!
@@ -50,4 +50,4 @@ The main lesson I gained through this challenge was to not make assumptions abou
 
 I'd love to receive feedback on these write-ups so you're invited to follow me on Twitter [@mycognosist](https://twitter.com/mycognosist) and let me know what you think. I'm always happy to connect with fellow geeks so feel free to reach out :) Thanks for reading and happy reverse-engineering!
 
-![Back to the walkthrough index](https://mycognosist.github.io/">Back to walk-through index)
+[Back to the walkthrough index](https://mycognosist.github.io/">Back to walk-through index)

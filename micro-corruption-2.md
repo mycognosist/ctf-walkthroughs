@@ -37,4 +37,4 @@ _Gotcha!_
 
 I hope you enjoyed that as much as I did! It was quite a simple solution in the end but the challenge taught some valuable lessons about hex and ascii, as well as reading compare instructions and practising control flow analysis. Keep your momentum going and tackle the Hanoi or Reykjavik challenge! I'll be back soon with more write-ups. Thanks for reading and happy reverse-engineering!
 
-![Back to the walkthrough index](https://mycognosist.github.io/)
+[Back to the walkthrough index](https://mycognosist.github.io/)
