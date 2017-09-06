@@ -50,4 +50,4 @@ The main lesson I gained through this challenge was to not make assumptions abou
 
 I'd love to receive feedback on these write-ups so you're invited to follow me on Twitter [@mycognosist](https://twitter.com/mycognosist) and let me know what you think. I'm always happy to connect with fellow geeks so feel free to reach out :) Thanks for reading and happy reverse-engineering!
 
-[Back to the walkthrough index](https://mycognosist.github.io/">Back to walk-through index)
+[Back to the walkthrough index](https://mycognosist.github.io/)
