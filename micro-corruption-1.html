@@ -18,29 +18,29 @@ Once you've completed the tutorial, the first stage of the Micro Corruption CTF 
 
 Before doing anything, scroll through the Disassembly window to take a look at the **main** function. The functions are clearly labelled and we see that at address 4450 a **check_password** function is called. That will be a good place to investigate further. Set a breakpoint by typing 'break check_password'.
 
-![Main function](https://mycognosist.github.io/images/Main.png")
+![Main function](https://mycognosist.github.io/images/Main.png)
 _Main function_
 
 Now begin execution of the program by typing 'c'. The program executes and an I/O dialogue box is triggered, asking us to enter our password. At this stage we will simply enter 'password' and continue.
 
-![Input password]("https://mycognosist.github.io/images/InputPass.png")
+![Input password](https://mycognosist.github.io/images/InputPass.png)
 _Input password_
 
 Enter 'c' at the Debugger Console until you arrive at the breakpoint we set previously. This takes us to the <check_password> function.
 
-![Function: check_password](https://mycognosist.github.io/images/CheckPassword.png")
+![Function: check_password](https://mycognosist.github.io/images/CheckPassword.png)
 _Function: check_password_
 
 I wrote out the **check_password** function by hand to better understand what's going on.
 
 ![Handwritten check_password function](https://mycognosist.github.io/images/ByHand.png)
 
-At first glance, we see that registers r14, r15 and r13 are active in this function. Great, now let's try to understand the flow of the function. r14 is first cleared, setting its register state to 0000. Next, the value stored in r15 (439c) is moved into r13. The value of r14 is then added to r13. Since the value of r14 is currently 0, the value of r13 remains the same. This brings us to the first really interesting instruction. We see that the value of r13 is compared with an address in memory: 0x2400(r14). If the values do not match, we jump to 44d2 which sets r15 to 0 and returns to the 'main' function. OK, interesting. Let's quickly take a second look at the **main** function to see what happens when r15 returns with a value of 0.
+At first glance, we see that registers r14, r15 and r13 are active in this function. Great, now let's try to understand the flow of the function. r14 is first cleared, setting its register state to 0000. Next, the value stored in r15 (439c) is moved into r13. The value of r14 is then added to r13. Since the value of r14 is currently 0, the value of r13 remains the same. This brings us to the first really interesting instruction. We see that the value of r13 is compared with an address in memory: 0x2400(r14). If the values do not match, we jump to 44d2 which sets r15 to 0 and returns to the **main** function. OK, interesting. Let's quickly take a second look at the **main** function to see what happens when r15 returns with a value of 0.
 
 ![Main function](https://mycognosist.github.io/images/Main.png)
 _Main function_
 
-In the **main function we see that the **check_password** function is followed by the instruction: tst r15 (at address 4454), which checks the value of r15. If the value is zero we step to the next instruction which sets the value of r15 to “Invalid password; try again”. However, if the test returns 1 we perform the jump to 4462: “Access Granted!”. Great. Now we know that the **check_password** function must return an r15 value greater than 0 to be successful. With that in mind, let's go back to the **check_password** function to gain a better understanding of the control flow.
+In the **main** function we see that the **check_password** function is followed by the instruction: tst r15 (at address 4454), which checks the value of r15. If the value is zero we step to the next instruction which sets the value of r15 to “Invalid password; try again”. However, if the test returns 1 we perform the jump to 4462: “Access Granted!”. Great. Now we know that the **check_password** function must return an r15 value greater than 0 to be successful. With that in mind, let's go back to the **check_password** function to gain a better understanding of the control flow.
 
 ![Function: check_password](https://mycognosist.github.io/images/CheckPassword.png)
 _Function: check_password_
