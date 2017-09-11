@@ -4,14 +4,14 @@ title: Tutorial - Writing a Python module with Rust
 
 ## Writing a Python module with Rust
 
-11 September, 2017
+11 September, 2017  
 [@mycognosist](https://www.twitter.com/mycognosist)
 
 ### Introduction
 
 **A few words about Rust**
 
-[Rust](https://www.rust-lang.org/en-US/) is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. The project was established with the aim of creating a safe, concurrent, practical systems language while providing efficient code and a comfortable level of abstraction [https://www.rust-lang.org/en-US/faq.html#project](https://www.rust-lang.org/en-US/faq.html#project). The 1.0 release of Rust was launched on 15 May, 2015, making it a young language that is still rapidly developing. With an engaged and helpful community, terrific documentation and elegant package registry ([crates.io](https://crates.io)), Rust is a pleasure to learn and work with. 
+[Rust](https://www.rust-lang.org/en-US/) is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. The project was established with the aim of creating a safe, concurrent, practical systems language while providing efficient code and a comfortable level of abstraction ([FAQ](https://www.rust-lang.org/en-US/faq.html#project)). The 1.0 release of Rust was launched on 15 May, 2015, making it a young language that is still rapidly developing. With an engaged and helpful community, terrific documentation and elegant package registry ([crates.io](https://crates.io)), Rust is a pleasure to learn and work with. 
 
 **Why did I write this tutorial?**
 
@@ -23,7 +23,7 @@ While Python is undoubtedly the Swiss-army knife of programming languages, there
 
 ### Getting started
 
-**1. Install Rust (include link)**
+**1. Install Rust**
 
 If you're running a *nix distribution, run the following command in your terminal:
 
@@ -33,9 +33,9 @@ curl https://sh.rustup.rs -sSf
 
 If you're running Windows, download and run the following executable:
 
-https://win.rustup.rs/
+[rustup-init.exe](https://win.rustup.rs/)
 
-Further information can be found on the official Rust installation page: https://www.rust-lang.org/en-US/install.html
+Further information can be found on the official [Rust installation page](https://www.rust-lang.org/en-US/install.html).
 
 * The rest of the instructions will be for *nix users.
 
@@ -111,7 +111,7 @@ mod tests {
 }
 {% endhighlight %}
 
-Let's delete that code so we have a blank file. First we need to For the purposes of this tutorial, we're going to pass and then enter the following:
+Let's delete that code so we have a blank file and then enter the following:
 
 {% highlight rust %}
 #[macro_use]
@@ -137,7 +137,7 @@ fn colour(_py: Python, val: String) -> PyResult<String> {
 }
 {% endhighlight %}
 
-The function has two parameters, the first is a Python object (allowing us to interface with the Python interpreter) and the second is a String that will be passed into our Rust code from Python. PyResult is an object that allows us to return exceptions to Python. We then use match, a nifty feature of Rust, to run a check on the string (val) that has been passed into the function. If val is "online", we return "green", for all other cases (note the underscore) we return "red". The code within Ok() defines the return value of our function, and [to_string()](https://doc.rust-lang.org/std/string/trait.ToString.html) is a trait used to convert a given value to a String. That's all there is to the function! 
+The function has two parameters, the first is a Python object (allowing us to interface with the Python interpreter) and the second is a String that will be passed into our Rust code from Python. PyResult is an object that allows us to return exceptions to Python. We then use [match](https://doc.rust-lang.org/book/second-edition/ch06-02-match.html), a nifty feature of Rust, to run a check on the string (val) that has been passed into the function. If val is "online", we return "green", for all other cases (note the underscore) we return "red". The code within Ok() defines the return value of our function, and [to_string()](https://doc.rust-lang.org/std/string/trait.ToString.html) is a trait used to convert a given value to a String. That's all there is to the function! 
 
 After writing our function code we need to integrate Rust with the Python interpreter:
 
@@ -149,11 +149,11 @@ py_module_initializer!(status, initstatus, Pyinit_status, |py, m| {
 });
 {% endhighlight %}
 
-py_module_initializer is a macro defined by the cpython crate we imported at the top of our library. The first parameter ('status') is the name of our module, the second parameter is the Python2 naming for our module, while the third parameter is for Python3. The last code on the first line (|py, m|) allows the modification of received module objects.
+py_module_initializer is a macro defined by the cpython crate we imported at the top of our library. The first parameter ('status') is the name of our module, the second parameter is the Python2 naming for our module, while the third parameter is for Python3. The last segment of code on the first line (py, m) allows the modification of received module objects.
 
 We then add a docstring and use the py_fn! macro to build the Python version of our function. That's all there is to it! Save and exit.
 
-Here's the complete code for our function:
+Here's the complete code for our module:
 
 {% highlight rust %}
 #[macro_use] 
@@ -185,7 +185,7 @@ cargo build --release
 
 **7. Copy the library**
 
-If everything went smoothly, you should see a new directory named 'target' in the project root. The library itself can be found in target/release and is named 'lib<module name>.so'. Let's copy the library and then fire up the Python interpreter to test our function:
+If everything went smoothly, you should see a new directory named 'target' in the project root. The library itself can be found in target/release and is named 'libstatus.so'. Let's copy the library and then fire up the Python interpreter to test our function:
 
 {% highlight shell_session %}
 cp target/release/libstatus.so status.so
