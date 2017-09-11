@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Reflecting on my First Nine Months of (Serious) Coding
 date: 2017-09-10
 categories: python flask reflection
