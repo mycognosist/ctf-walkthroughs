@@ -6,7 +6,7 @@ categories: python flask reflection
 
 ## Reflecting on my first nine months of (serious) coding
 
-10 September, 2017
+10 September, 2017  
 [@mycognosist](https://www.twitter.com/mycognosist)
 
 ### The backstory
