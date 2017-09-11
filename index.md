@@ -5,7 +5,7 @@ title: mycognosist [github]
 # @mycognosist
 
 ## Blog Posts
-[Reflecting on my first nine months of (serious) coding]({{ site.baseurl }}{% link _posts/2017-09-10-nine-month-relfection.md %})
+[Reflecting on my first nine months of (serious) coding]({{ site.baseurl }}{% link _posts/2017-09-10-nine-month-reflection.md %})
 
 ## Tutorials
 Writing a Python module with Rust
