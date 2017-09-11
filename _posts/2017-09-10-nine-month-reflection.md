@@ -5,6 +5,10 @@ categories: python flask reflection
 ---
 
 ## Reflecting on my first nine months of (serious) coding
+
+10 September, 2017
+[@mycognosist](https://www.twitter.com/mycognosist)
+
 ### The backstory
 
 Like so many of my peers who end up engaging passionately with technology, whether as hobbyists or professionals, my journey began as a young child; playing F-16 flight simulators run-off floppy disks, dismantling electronics and exploring telnet servers via clunky 56k dial-up. With an electronic engineer for a father and an analytical mind, what else could be expected? Had I known about penetration testing when I set-off for university my path might have been completely different. As it turned out I fell in love with anthropology (quite accidentally) and – though I never relinquished my engagement with computers - put my aspirations of a career in technology behind me. That was in 2007.
@@ -43,4 +47,4 @@ Depending on your personality type, learning to code can be a lonely experience 
 
 And so here I am, nine months after picking up my first Python book. I’ve recently learned to write simple unit tests, I submitted my first application for a developer position and I just wrote my first Python module in Rust. It has been a challenging time full of ups and downs but I can say for certain that I’m doing it, and that I love it! I’ve become a programmer, not through thinking about being a programmer, or wishing I was a programmer, but by programming – each and every day. As Alan Watts once said (and I’m paraphrasing): Don’t aspire to be a writer, be a writer. If you’re writing...you’re a writer! The road to mastery is paved with practice. Keep working at it, be kind to yourself and you’re sure to find fulfillment and the realisation of your dreams!
 
-I hope you enjoyed this reflection piece and that you gained something positive from it. Please feel free to reach out to me on Twitter (@mycognosist) or via email (gnomad@cryptolab.net) if you have any feedback, questions, or if you just want to say hi. I’ll be focusing on producing more content in the coming months and can’t wait to continue the journey!
+I hope you enjoyed this reflection piece and that you gained something positive from it. Please feel free to reach out to me on [Twitter](https://www.twitter.com/mycognosist) or via email (gnomad@cryptolab.net) if you have any feedback, questions, or if you just want to say hi. I’ll be focusing on producing more content in the coming months and can’t wait to continue the journey!
