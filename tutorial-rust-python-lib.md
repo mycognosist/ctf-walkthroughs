@@ -183,7 +183,7 @@ You should be in the root directory of your Rust module (in my case: /home/proje
 cargo build --release 
 {% endhighlight %}
 
-The default behaviour of cpython is to use whichever Python3.x interpreter is set in PATH at compile time.
+_Note: The default behaviour of cpython is to use whichever Python3.x interpreter is set in PATH at compile time._
 
 **7. Copy the library**
 
