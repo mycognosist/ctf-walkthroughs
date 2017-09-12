@@ -64,7 +64,7 @@ Next, we're going to define the name and crate-type of our library. The name wil
 {% highlight toml %}
 [lib]
 name = "status"
-crate-type = ["dylib"]
+crate-type = ["cdylib"]
 {% endhighlight %}
 
 Then we need to define the project dependencies. We're going to be using the cpython bindings to integrate our Rust code with Python. 
@@ -90,7 +90,7 @@ authors = ["mycognosist <gnomad@cryptolab.net>"]
 
 [lib]
 name = "status"
-crate-type = ["dylib"]
+crate-type = ["cdylib"]
 
 [dependencies]
 cpython = "*"
@@ -182,6 +182,8 @@ You should be in the root directory of your Rust module (in my case: /home/proje
 {% highlight shell_session %}
 cargo build --release 
 {% endhighlight %}
+
+The default behaviour of cpython is to use whichever Python3.x interpreter is set in PATH at compile time.
 
 **7. Copy the library**
 
